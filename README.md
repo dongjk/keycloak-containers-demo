@@ -331,7 +331,7 @@ You may want to change it back before you continue ;).
 
 prepare a js-console2, notice that in index.html, use `check-sso`, and in `kyecloak.json` use `js-consle2`.
 
-# Start JS Console application
+### Start JS Console application
 
 First build the image with:
 
@@ -341,7 +341,7 @@ Then run it with:
 
     docker run --name demo-js-console -p 8001:80 demo-js-console
 
-# Create a client
+### Create a client
 
 Now create a client for the JS console by clicking on `clients` then `create`.
 
@@ -357,7 +357,7 @@ On the next form fill in the following values:
 
 Try opening the [JS Console 2](http://localhost:8001) and it can SSO with previous login user in JS Console.
 
-# change scope in js-console2
+### change scope in js-console2
 
 Now remove the avatar scope in `client`, ` js-console2`, `Client Scopes`.
 
