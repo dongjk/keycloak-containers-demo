@@ -327,6 +327,44 @@ new login screen!
 
 You may want to change it back before you continue ;).
 
+## config SSO in multi clients.
+
+prepare a js-console2, notice that in index.html, use `check-sso`, and in `kyecloak.json` use `js-consle2`.
+
+# Start JS Console application
+
+First build the image with:
+
+    docker build -t demo-js-console2 js-console2
+    
+Then run it with:
+
+    docker run --name demo-js-console -p 8001:80 demo-js-console
+
+# Create a client
+
+Now create a client for the JS console by clicking on `clients` then `create`.
+
+Fill in the following values:
+
+* Client ID: `js-console2`
+* Click `Save`
+
+On the next form fill in the following values:
+
+* Valid Redirect URIs: `http://localhost:8001/*`
+* Web Origins: `http://localhost:8001`
+
+Try opening the [JS Console 2](http://localhost:8001) and it can SSO with previous login user in JS Console.
+
+# change scope in js-console2
+
+Now remove the avatar scope in `client`, ` js-console2`, `Client Scopes`.
+
+refresh JS Console 2, the avatar is gone, refresh JS Console, the avatar still there.
+
+
+
 ## Keys and Signing Algorithms
 
 By default Keycloak signs tokens with RS256, but we have support for other signing
